@@ -1,0 +1,7 @@
+
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(À±ìúÿÿÿÿ8­ÿ›à†-
+dsquid:S2095x"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ìíó;8ù¦äà†-
+csquid:S2095@"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(Î°j8¹…Öà†-
+msquid:S11927"JDefine a constant instead of duplicating this literal "Exception" 6 times.(¢¼§¥üÿÿÿÿ8—†Üà†-
+esquid:S2095U"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8—†Üà†-
+esquid:S20954"GUse try-with-resources or close this "ResultSet" in a "finally" clause.(ŒçÔì8Ââ¿à†-

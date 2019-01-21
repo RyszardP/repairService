@@ -1,0 +1,15 @@
+package service.validator;
+
+/**
+ * Created by user on 17.01.2019.
+ */
+/* Provides interface to validate input parameters
+ * @param <T>
+ */
+public interface ValidatorInterface<T> {
+    /* Validates the values in the fields of the object entity.
+            * @param entity object type T which is need to validate.
+     * @return true if parameters are valid, else return false.
+            */
+    boolean isValid(T entity);
+}

@@ -1,0 +1,4 @@
+
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÊóÃ¥øÿÿÿÿ
+Dsquid:S1905B"&Remove this unnecessary cast to "int".(Î¢š™8ë¼òÀ…-
+zsquid:S00116"VRename this field "employee_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Å¬÷µÿÿÿÿÿ8Ò–ñÀ…-

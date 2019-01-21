@@ -1,0 +1,10 @@
+
+psquid:S3008"SRename this field "PASSWORD" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ù‰¡ 8¡íùÃ„-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8æá„Ä„-
+ssquid:S2068"V'PASSWORD' detected in this expression, review this potentially hard-coded credential.(Ù‰¡ 8¡íùÃ„-
+fsquid:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(Ã©š8Õ¹ôÄ„-
+>squid:S2068" Remove this hard-coded password.(Ã©š8¡íùÃ„-
+lsquid:S3008"NRename this field "URL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¢ôÛ8¡íùÃ„-
+Fsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8«Š‡Ä„-
+hsquid:S2259""EA "NullPointerException" could be thrown; "connect" is nullable here.(†àåøÿÿÿÿ8Õ¹ôÄ„-
+vsquid:S3008"SRename this field "USERNAME" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–¸ÜÇşÿÿÿÿ8¡íùÃ„-

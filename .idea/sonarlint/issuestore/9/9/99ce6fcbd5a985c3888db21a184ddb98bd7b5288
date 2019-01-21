@@ -1,0 +1,18 @@
+
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡û÷Á8ò©ğÔ†-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ïö üÿÿÿÿ8“Ö×†-
+msquid:S00100-"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¯‰Æâ8ò©ğÔ†-
+vsquid:S00116	"WRename this field "sector_owner" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(İŠ¾õ8ÏêêÔ†-
+psquid:S001171"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘áß8ò©ğÔ†-
+rsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é•Õ¤üÿÿÿÿ8ò©ğÔ†-
+msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¡û÷Á8ò©ğÔ†-
+`squid:UselessImportCheck"5Remove this unused import 'domain.enums.SectorTitle'.(ï¸ŒÅ8ïëÙ×†-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ïö üÿÿÿÿ8“Ö×†-
+usquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘Ïö üÿÿÿÿ8“Ö×†-
+psquid:S00117!"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥™¡«8ò©ğÔ†-
+msquid:S00100!"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥™¡«8ò©ğÔ†-
+msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(üİı8ò©ğÔ†-
+rsquid:S00116"TRename this field "sector_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àÙû
+8îŒÁ´†-
+msquid:S001001"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘áß8ò©ğÔ†-
+xsquid:S00116"TRename this field "master_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ë×ƒğÿÿÿÿÿ8ô©èÔ†-

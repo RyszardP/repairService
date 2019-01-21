@@ -1,0 +1,23 @@
+
+psquid:S001174"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ñÔô8£ìÚ†-
+xsquid:S00116"YRename this field "sectorFault_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Á“©ˆ8µÿ÷»†-
+usquid:S00117,"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş¹ßåúÿÿÿÿ8£ìÚ†-
+rsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬‹ñûÿÿÿÿ8£ìÚ†-
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼æâ¾8£ìÚ†-
+msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â­¨8£ìÚ†-
+rsquid:S00100,"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ş¹ßåúÿÿÿÿ8£ìÚ†-
+¤squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆÜ´ùÿÿÿÿ8À¸çÚ†-
+lsquid:S00100$"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú±µ8£ìÚ†-
+lsquid:S00100("NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(õƒ¤8£ìÚ†-
+qsquid:S00116
+"RRename this field "date_in" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àšˆ‘8ĞåÚ†-
+psquid:S00117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(â­¨8£ìÚ†-
+msquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¼æâ¾8£ìÚ†-
+osquid:S00117$"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú±µ8£ìÚ†-
+rsquid:S001000"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦»ç“şÿÿÿÿ8£ìÚ†-
+zsquid:S00116"VRename this field "finish_date" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(íÇûªøÿÿÿÿ8”Õû»†-
+lsquid:S00100 "NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óÉ’l8£ìÚ†-
+lsquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(½ÏƒO8£ìÚ†-
+rsquid:S00116"SRename this field "fault_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(±•¡±8ÑëÚ†-
+tsquid:S00116	"URename this field "fault_type" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÿå¬8µÿ÷»†-
+msquid:S001004"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤ñÔô8£ìÚ†-
