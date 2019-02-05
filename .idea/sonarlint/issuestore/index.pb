@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-_
-/src/main/java/com/htp/ryszardp/ConnectToDB.java,1\a\1a6a615929502ad3261089ff5555afd95c9cd951
 c
 3common/src/main/java/dao/factory/SQLDaoFactory.java,8\1\812b7f347dc85b376556687c6f6acbabac7df4b9
 t

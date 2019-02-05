@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+
+
+
+    <listener>
+        <listener-class>
+            com.htp.repairService.listener.ConnectPoolListener
+        </listener-class>
+    </listener>
+
+    <servlet>
+
+        <servlet-name>FrontController</servlet-name>
+        <servlet-class>com.htp.repairService.controller.FrontController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FrontController</servlet-name>
+        <url-pattern>/FrontController</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <jsp-file>/WEB-INF/jsp/admin/admin.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Registration</servlet-name>
+        <jsp-file>/WEB-INF/jsp/registration/registration.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registration</servlet-name>
+        <url-pattern>/registration</url-pattern>
+    </servlet-mapping>
+
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
+
+    <!--Filters -->
+    <filter>
+        <display-name>CharsetFilter</display-name>
+        <filter-name>CharsetFilter</filter-name>
+        <filter-class>com.htp.repairService.filter.CharsetFilter</filter-class>
+        <init-param>
+            <param-name>characterEncoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CharsetFilter</filter-name>
+        <url-pattern>/FrontController</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <display-name>AdministratorSecurityFilter</display-name>
+        <filter-name>AdministratorSecurityFilter</filter-name>
+        <filter-class>com.htp.repairService.filter.AdministratorSecurityFilter</filter-class>
+        <!--<init-param>-->
+        <!--<param-name>characterEncoding</param-name>-->
+        <!--<param-value>UTF-8</param-value>-->
+        <!--</init-param>-->
+    </filter>
+    <filter-mapping>
+        <filter-name>AdministratorSecurityFilter</filter-name>
+        <url-pattern>/appViewAdmin</url-pattern>
+    </filter-mapping>
+
+
+</web-app>
