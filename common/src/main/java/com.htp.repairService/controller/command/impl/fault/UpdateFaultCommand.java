@@ -2,11 +2,15 @@ package com.htp.repairService.controller.command.impl.fault;
 
 import com.htp.repairService.controller.command.CommandException;
 import com.htp.repairService.controller.command.CommandInterface;
+import com.htp.repairService.domain.to.Faults;
 import com.htp.repairService.service.FaultService;
+import com.htp.repairService.service.PagePath;
 import com.htp.repairService.service.impl.FaultsServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.sql.Date;
 
 public class UpdateFaultCommand implements CommandInterface {
 
@@ -24,8 +28,38 @@ public class UpdateFaultCommand implements CommandInterface {
 
     private  UpdateFaultCommand(){}
 
+    public static class  SingletonHolder {
+        private static final CommandInterface INSTANCE = new UpdateFaultCommand();
+    }
+
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        return null;
+        String page = null;
+
+        try {
+            String fault_sector = request.getParameter(FAULT_SECTOR);
+            String fault_type = request.getParameter(FAULT_TYPE);
+            String date_in = request.getParameter(FAULT_DATE_IN);
+            String data_done = request.getParameter(FAULT_DATE_DONE);
+
+            Faults faults = new Faults();
+            faults.setSectorFault_id(Integer.valueOf(fault_sector));
+            faults.setFault_type(String.valueOf(fault_type));
+            faults.setDate_in(Date.valueOf(date_in));
+            faults.setFinish_date(Date.valueOf(data_done));
+
+            boolean check = SERVICE.fixedRoom(faults);
+            if (check){
+                page = PagePath.UPDATE_FAULT.toString();
+            } else {
+                page = PagePath.ERROR.toString();
+            }
+            HttpSession session = request.getSession();
+            session.setAttribute(SESSION_GOOD_MESSAGE, SESSION_GOOD_MESSAGE_VALUE);
+            request.setAttribute(ACTION, REDIRECT_ACTION_ATTRIBUTE);
+        } catch (Exception e) {
+            throw new CommandException("Command Exception", e);
+        }
+        return page.toString().toLowerCase();
     }
 }

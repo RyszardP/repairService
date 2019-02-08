@@ -2,7 +2,9 @@ package com.htp.repairService.controller.command;
 
 import com.htp.repairService.controller.command.impl.LoginCommand;
 import com.htp.repairService.controller.command.impl.RegistrationCommand;
-import com.htp.repairService.controller.command.impl.TestCommand;
+import com.htp.repairService.controller.command.impl.employee.ViewEmployeesCommand;
+import com.htp.repairService.controller.command.impl.fault.DeleteFaultCommand;
+import com.htp.repairService.controller.command.impl.fault.TestCommand;
 import com.htp.repairService.controller.command.impl.employee.CreateEmployeeCommand;
 import com.htp.repairService.controller.command.impl.fault.CreateFaultCommand;
 
@@ -19,11 +21,16 @@ public class CommandHelper {
 
     public CommandHelper() {
         commands.put(CommandName.AUTORIZATION, LoginCommand.getInstance());
-        // commands.put(CommandName.VIEW_ALL_EMPLOYEES, ViewEmployeesCommand.getInstance());
         commands.put(CommandName.REGISTRATION, RegistrationCommand.getInstance());
+
+       // commands.put(CommandName.VIEW_ALL_EMPLOYEES, ViewEmployeesCommand.getInstance());
         commands.put(CommandName.CREATE_EMPLOYEE, CreateEmployeeCommand.getInstance());
+
         commands.put(CommandName.TEST_COMMAND, TestCommand.getInstance());
-        commands.put(CommandName.CREATE_FAULT_COMMAND, CreateFaultCommand.getInstance());
+        commands.put(CommandName.CREATE_FAULT, CreateFaultCommand.getInstance());
+        commands.put(CommandName.DELETE_FAULT_COMMAND, DeleteFaultCommand.getInstance());
+
+
 
     }
 
@@ -44,6 +51,7 @@ public class CommandHelper {
     }
 
     private enum CommandName {
-        AUTORIZATION, CREATE_EMPLOYEE, VIEW_ALL_EMPLOYEES, TEST_COMMAND, REGISTRATION, CREATE_FAULT_COMMAND
+        AUTORIZATION, CREATE_EMPLOYEE, VIEW_ALL_EMPLOYEES, TEST_COMMAND, REGISTRATION, CREATE_FAULT,
+        DELETE_FAULT_COMMAND
     }
 }

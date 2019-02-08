@@ -16,7 +16,6 @@ import java.sql.Date;
 
 public class CreateFaultCommand implements CommandInterface {
     private static final FaultService SERVICE = FaultsServiceImpl.getInstance();
-
     private static final String FAULT_SECTOR = "fault_sector";
     private static final String FAULT_TYPE = "fault_type";
     private static final String FAULT_DATE_IN = "date_in";
@@ -27,7 +26,7 @@ public class CreateFaultCommand implements CommandInterface {
     private static final String ERROR_FLAG = "errorFlag";
     private static final int ERROR_FLAG_VALUE = 1;
     private static final int ERROR_FLAG_VALUE_2 = 2;
-    private static final String FAULT = "faults" ;
+    private static final String FAULT = "fault" ;
 
     private CreateFaultCommand(){}
 

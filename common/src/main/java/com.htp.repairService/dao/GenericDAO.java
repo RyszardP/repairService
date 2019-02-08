@@ -1,16 +1,17 @@
 package com.htp.repairService.dao;
 
-        import com.htp.repairService.exception.DaoException;
+import com.htp.repairService.exception.DaoException;
 
-        import java.util.List;
+import java.util.List;
 
 /**
  * Basic Data Access Object interface with template parameters.
+ *
  * @param <T> generic type of objects passed to methods
  * @param <K> generic type of objects which will serve as a key
- * Provides CRUD operations with {@link T} objects.
- * */
-public interface GenericDAO <T, K> {
+ *            Provides CRUD operations with {@link T} objects.
+ */
+public interface GenericDAO<T, K> {
     /**
      * Method find all nodes from database
      *

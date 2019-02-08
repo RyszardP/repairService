@@ -42,7 +42,9 @@
                                 </button>
                         </p>
                 </a>
-                <a href="FrontController?command=CREATE_FAULT_COMMAND">
+
+
+                <a href="FrontController?command=CREATE_FAULT">
                         <p style="text-align: center">
                                 <button>
                                         Create fault

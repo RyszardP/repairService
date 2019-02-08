@@ -1,4 +1,4 @@
-package com.htp.repairService.controller.command.impl;
+package com.htp.repairService.controller.command.impl.fault;
 
 import com.htp.repairService.controller.command.CommandException;
 import com.htp.repairService.controller.command.CommandInterface;
