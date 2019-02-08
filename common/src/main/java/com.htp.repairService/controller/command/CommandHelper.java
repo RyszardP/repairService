@@ -4,7 +4,7 @@ import com.htp.repairService.controller.command.impl.LoginCommand;
 import com.htp.repairService.controller.command.impl.RegistrationCommand;
 import com.htp.repairService.controller.command.impl.TestCommand;
 import com.htp.repairService.controller.command.impl.employee.CreateEmployeeCommand;
-import com.htp.repairService.controller.command.impl.employee.ViewEmployeesCommand;
+import com.htp.repairService.controller.command.impl.fault.CreateFaultCommand;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
@@ -19,11 +19,11 @@ public class CommandHelper {
 
     public CommandHelper() {
         commands.put(CommandName.AUTORIZATION, LoginCommand.getInstance());
-       // commands.put(CommandName.VIEW_ALL_EMPLOYEES, ViewEmployeesCommand.getInstance());
+        // commands.put(CommandName.VIEW_ALL_EMPLOYEES, ViewEmployeesCommand.getInstance());
         commands.put(CommandName.REGISTRATION, RegistrationCommand.getInstance());
-         commands.put(CommandName.CREATE_EMPLOYEE, CreateEmployeeCommand.getInstance());
-         commands.put(CommandName.TEST_COMMAND, TestCommand.getInstance());
-
+        commands.put(CommandName.CREATE_EMPLOYEE, CreateEmployeeCommand.getInstance());
+        commands.put(CommandName.TEST_COMMAND, TestCommand.getInstance());
+        commands.put(CommandName.CREATE_FAULT_COMMAND, CreateFaultCommand.getInstance());
 
     }
 
@@ -35,7 +35,7 @@ public class CommandHelper {
      */
     public CommandInterface getCommand(HttpServletRequest request) {
         String commandName = request.getParameter(ATTRIBUTE_COMMAND);
-        if(commandName != null) {
+        if (commandName != null) {
             CommandName name = CommandName.valueOf(commandName.toUpperCase().replace(DASH, UNDERSCORE));
             return commands.get(name);
         } else {
@@ -44,5 +44,6 @@ public class CommandHelper {
     }
 
     private enum CommandName {
-        AUTORIZATION, CREATE_EMPLOYEE, VIEW_ALL_EMPLOYEES, TEST_COMMAND, REGISTRATION}
+        AUTORIZATION, CREATE_EMPLOYEE, VIEW_ALL_EMPLOYEES, TEST_COMMAND, REGISTRATION, CREATE_FAULT_COMMAND
+    }
 }

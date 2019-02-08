@@ -24,7 +24,7 @@ public class FaultsServiceImpl implements FaultService {
     }
 
     @Override
-    public Long create(Faults faults) throws ServiceException {
+    public Faults create(Faults faults) throws ServiceException {
         FaultsDAO faultsDAO = factory.getFaultsDao();
         try {
             faultsDAO.create(faults);

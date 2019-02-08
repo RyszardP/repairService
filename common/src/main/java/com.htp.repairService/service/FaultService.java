@@ -4,7 +4,7 @@ import com.htp.repairService.domain.to.Faults;
 
 
 public interface FaultService extends GenericServiceInterface  {
-    Long create(Faults faults) throws ServiceException;
+    Faults create(Faults faults) throws ServiceException;
 
     Faults loadById(int reservationId) throws ServiceException;
 
