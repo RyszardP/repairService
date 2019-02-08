@@ -21,7 +21,7 @@ public class EmployeeSecutityFilter implements Filter {
     /**
      * The method takes two objects from the session: the client and administrator. If the client does not object,
      * the Supplies a transition to the main page of the application. When handling the customer's administrative
-     * to the page, it will be redirected to the main page of the client.
+     * to the page, it will be redirected to the main page of the employee.
      * If authentication as administrator of the request will be transmitted to the next filter in the filter chain.
      *
      * @param req - ServletRequest
@@ -37,15 +37,15 @@ public class EmployeeSecutityFilter implements Filter {
 
         HttpSession session = request.getSession();
         Employee administrator = (Employee) session.getAttribute(ADMIN);
-        Employee user = (Employee) session.getAttribute(EMPLOYEE);
+        Employee employee = (Employee) session.getAttribute(EMPLOYEE);
 
-        if (user == null) {
+        if (employee == null) {
             if (administrator == null) {
                 LOGGER.info("Unauthorized attempt to enter the admin page");
                 request.getRequestDispatcher(INDEX_PAGE).forward(request, response);
             }
         } else {
-            LOGGER.info("Client" + user.getLogin() +  " attempt to enter the admin page");
+            LOGGER.info("Client" + employee.getLogin() +  " attempt to enter the admin page");
             request.getRequestDispatcher(RESULT_PAGE).forward(request, response);
         }
         chain.doFilter(req, resp);

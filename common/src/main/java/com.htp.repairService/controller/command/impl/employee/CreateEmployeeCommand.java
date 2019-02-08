@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 
 public class CreateEmployeeCommand implements CommandInterface {
     private static final EmployeeService SERVICE = EmployeeServiceImpl.getInstance();
-    private static final PagesConfigManager MANAGER = PagesConfigManager.getInstance();
+   // private static final PagesConfigManager MANAGER = PagesConfigManager.getInstance();
     private static final String LOGIN_ATTRIBUTE = "login";
     private static final String PASSWORD_ATTRIBUTE = "password";
 
@@ -53,7 +53,7 @@ public class CreateEmployeeCommand implements CommandInterface {
      */
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        String page;
+        String page = null;
         try {
             String login = request.getParameter(LOGIN_ATTRIBUTE);
             String password = request.getParameter(PASSWORD_ATTRIBUTE);
@@ -74,7 +74,7 @@ public class CreateEmployeeCommand implements CommandInterface {
         } catch (ValidationException e) {
             request.setAttribute(ERROR_FLAG, ERROR_FLAG_VALUE);
             request.setAttribute(ACTION, FORWARD_ACTION_ATTRIBUTE);
-            page = MANAGER.getProperty(PagePath.CREATE_EMPLOYEE.toString());
+           // page = MANAGER.getProperty(PagePath.CREATE_EMPLOYEE.toString());
         } catch (Exception e) {
             throw new CommandException("Command Exception", e);
         }

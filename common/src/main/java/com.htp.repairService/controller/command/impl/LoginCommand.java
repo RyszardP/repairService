@@ -22,9 +22,9 @@ public class LoginCommand implements CommandInterface {
     private static final String LOGIN = "login";
     private static final String PASSWORD = "password";
     private static final String ADMIN_ROLE = "admin";
-    private static final String EMPLOYEE_ROLE = "employee";
-    private static final String ERROR_FLAG = "errorFlag";
-    private static final int ERROR_FLAG_VALUE = 1;
+    private static final String EMPLOYEE = "employee";
+    // private static final String ERROR_FLAG = "errorFlag";
+    // private static final int ERROR_FLAG_VALUE = 1;
     private static final String ACTION = "action";
     private static final String REDIRECT_ACTION_ATTRIBUTE = "redirect";
     private static final String FORWARD_ACTION_ATTRIBUTE = "forward";
@@ -40,10 +40,6 @@ public class LoginCommand implements CommandInterface {
         private static final CommandInterface INSTANCE = new LoginCommand();
     }
 
-    @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
-        return null;
-    }
 
     /**
      * Method performs the procedure for authorization in system
@@ -59,41 +55,38 @@ public class LoginCommand implements CommandInterface {
      * @throws CommandException if authorization method process fail
      */
 
+    @Override
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws CommandException {
 
-      /*  PagePath page;
-        try {
+        PagePath page = null;
+
             Employee tempEmployee = new Employee();
             tempEmployee.setLogin(request.getParameter(LOGIN));
             String password = request.getParameter(PASSWORD);
-            tempEmployee.setPassword(password);
 
             HttpSession session = request.getSession(true);
-            Employee employee = SERVICE.authorization(tempEmployee);
 
-            if (employee == null) {
-                request.setAttribute(ERROR_FLAG, ERROR_FLAG_VALUE);
-                request.setAttribute(ACTION, FORWARD_ACTION_ATTRIBUTE);
-                page = PagePath.INDEX;
-            } else {
-                if (employee.getRole().equals(ADMIN_ROLE)) {
-                    Administrator admin = new Administrator();
-                    admin.setPassword(employee.getPassword());
-                    admin.setLogin(employee.getLogin());
-                    admin.setRole(employee.getRole());
 
-                    session.setAttribute(ADMIN_ROLE, admin);
-                    page = PagePath.ADMIN;
-                }
-                request.setAttribute(ACTION, REDIRECT_ACTION_ATTRIBUTE);
+            Employee employee = null;
+            try {
+                employee = SERVICE.authorization(tempEmployee);
+            } catch (ServiceException e){
+                e.printStackTrace();
             }
-        } catch (ValidationException e) {
-            request.setAttribute(ERROR_FLAG, ERROR_FLAG_VALUE);
-            request.setAttribute(ACTION, FORWARD_ACTION_ATTRIBUTE);
-            page = PagePath.INDEX;
-        } catch (ServiceException e) {
-            throw new CommandException("Command Exception", e);
-        }
-return null;
-     // return MANAGER.getProperty(page.toString());
-    }*/
+            if(employee == null){
+                // request.setAttribute(ERROR_FLAG, ERROR_FLAG_VALUE);
+                request.setAttribute(ACTION,FORWARD_ACTION_ATTRIBUTE);
+                page = PagePath.REGISTRATION;
+            } else {
+                  /*  if (employee.getRole().equals(ADMIN_ROLE)){
+                        session.setAttribute(EMPLOYEE, employee);
+                        page = PagePath.RESULT;
+                    }
+*/
+                page = PagePath.ADMIN;
+                session.setAttribute(EMPLOYEE, employee);
+                request.setAttribute(ACTION, FORWARD_ACTION_ATTRIBUTE);
+            }
+            return  page.toString().toLowerCase();
+    }
 }

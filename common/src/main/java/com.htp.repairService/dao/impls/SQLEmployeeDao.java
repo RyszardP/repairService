@@ -17,7 +17,7 @@ import java.util.List;
 
 public class SQLEmployeeDao implements EmployeeDAO {
 
-    private static final String SELECT_SPECIFIC_EMPLOYEE= "SELECT * FROM employee WHERE  login = ? and name = ?";
+    private static final String SELECT_SPECIFIC_EMPLOYEE= "SELECT * FROM employee WHERE  login = ? AND name = ?";
 
     private static final String SELECT_BY_ID = "SELECT * FROM employee WHERE employee_id = ?";
 
@@ -26,8 +26,8 @@ public class SQLEmployeeDao implements EmployeeDAO {
     private static final String UPDATE_EMPLOYEE = "UPDATE employee\n" +
             " SET login = ?\n" +
             " WHERE login = ?";
-    private static final String ADD_EMPLOYEE = "INSERT INTO employee (login, password "
-            + " VALUES (?, ?)";
+    private static final String CREATE_EMPLOYEE = "INSERT INTO employee (name, surname, email, speciality, gender, login, password, employee_sector) " +
+             " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String LAST_INSERT_ID = "SELECT last_insert_id() as lastId";
 
     private static final String LOGIN = "login";
@@ -186,11 +186,18 @@ public class SQLEmployeeDao implements EmployeeDAO {
     @Override
     public int create(Employee newEmployee) throws DaoException {
         try(Connection connect = pool.getConnection();
-            PreparedStatement statement = connect.prepareStatement(ADD_EMPLOYEE);
+            PreparedStatement statement = connect.prepareStatement(CREATE_EMPLOYEE);
             PreparedStatement statementTwo = connect.prepareStatement(LAST_INSERT_ID)) {
 
-            statement.setString(1,newEmployee.getLogin());
-            statement.setString(2,newEmployee.getPassword());
+            statement.setString(1,newEmployee.getName());
+            statement.setString(2,newEmployee.getSurname());
+            statement.setString(3,newEmployee.getEmail());
+            statement.setString(4,newEmployee.getSpecialty());
+            statement.setString(5,newEmployee.getGender() !=null ?String.valueOf(newEmployee.getGender()): "Male");
+            statement.setString(6,newEmployee.getLogin());
+            statement.setString(7,newEmployee.getPassword());
+            statement.setString(8,newEmployee.getEmployeeSector_id());
+
 
 
             statement.executeUpdate();

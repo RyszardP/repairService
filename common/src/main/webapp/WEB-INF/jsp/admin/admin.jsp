@@ -5,11 +5,13 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>AFTER REGISTRATION</title>
+    <title>AFTER autorization</title>
 </head>
 <body>
 <div align="center">
-    <div>
+    Admin page
+
+  <%--  <div>
         <form action="FrontController" id="form-page-registration">
             <input type="hidden" name="command" value="registration">
             <div class="table">
@@ -26,7 +28,7 @@
             </div>
             <input type="submit" id="finish_button" value="Reg me!">
         </form>
-    </div>
+    </div>--%>
 </div>
 </body>
 </html>

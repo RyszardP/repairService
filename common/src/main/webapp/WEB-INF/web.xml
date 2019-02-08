@@ -4,15 +4,10 @@
          id="WebApp_ID" version="2.5">
 
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.htm</welcome-file>
+
         <welcome-file>index.jsp</welcome-file>
-        <welcome-file>default.html</welcome-file>
-        <welcome-file>default.htm</welcome-file>
-        <welcome-file>default.jsp</welcome-file>
+
     </welcome-file-list>
-
-
 
     <listener>
         <listener-class>
@@ -30,6 +25,8 @@
         <url-pattern>/FrontController</url-pattern>
     </servlet-mapping>
 
+
+    <!--admin page-->
     <servlet>
         <servlet-name>admin</servlet-name>
         <jsp-file>/WEB-INF/jsp/admin/admin.jsp</jsp-file>
@@ -48,34 +45,69 @@
         <url-pattern>/registration</url-pattern>
     </servlet-mapping>
 
+    <!--create new employee-->
+    <servlet>
+        <servlet-name>create_employee</servlet-name>
+        <jsp-file>/WEB-INF/jsp/registration/create_employee.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_employee</servlet-name>
+        <url-pattern>/create_employee</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>faultslist</servlet-name>
+        <jsp-file>/WEB-INF/jsp/faults/faultslist.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>faultslist</servlet-name>
+        <url-pattern>/faultslist</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Error</servlet-name>
+        <jsp-file>/WEB-INF/jsp/util/error.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Error</servlet-name>
+        <url-pattern>/error</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>main</servlet-name>
+        <jsp-file>/WEB-INF/jsp/main.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>main</servlet-name>
+        <url-pattern>/main</url-pattern>
+    </servlet-mapping>
+
+
     <session-config>
         <session-timeout>10</session-timeout>
     </session-config>
 
     <!--Filters -->
-    <filter>
-        <display-name>CharsetFilter</display-name>
-        <filter-name>CharsetFilter</filter-name>
-        <filter-class>com.htp.repairService.filter.CharsetFilter</filter-class>
-        <init-param>
-            <param-name>characterEncoding</param-name>
-            <param-value>UTF-8</param-value>
-        </init-param>
-    </filter>
+      <filter>
+          <display-name>CharsetFilter</display-name>
+          <filter-name>CharsetFilter</filter-name>
+          <filter-class>com.htp.repairService.filter.CharsetFilter</filter-class>
+          <init-param>
+              <param-name>characterEncoding</param-name>
+              <param-value>UTF-8</param-value>
+          </init-param>
+      </filter>
 
-    <filter-mapping>
-        <filter-name>CharsetFilter</filter-name>
-        <url-pattern>/FrontController</url-pattern>
-    </filter-mapping>
+      <filter-mapping>
+          <filter-name>CharsetFilter</filter-name>
+          <url-pattern>/FrontController</url-pattern>
+      </filter-mapping>
 
     <filter>
         <display-name>AdministratorSecurityFilter</display-name>
         <filter-name>AdministratorSecurityFilter</filter-name>
         <filter-class>com.htp.repairService.filter.AdministratorSecurityFilter</filter-class>
-        <!--<init-param>-->
-        <!--<param-name>characterEncoding</param-name>-->
-        <!--<param-value>UTF-8</param-value>-->
-        <!--</init-param>-->
+
     </filter>
     <filter-mapping>
         <filter-name>AdministratorSecurityFilter</filter-name>

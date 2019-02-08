@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8"%>
 
@@ -7,12 +6,15 @@
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-        <title>main</title>
+        <title>Main</title>
 </head>
 <body>
 <div align="center">
+        Workshop main page
+        <br>
+
         <div>
-                <form action="FrontController" id="form-page-registration">
+                <form action="FrontController" id="autorization">
                         <input type="hidden" name="command" value="autorization">
                         <div class="table">
                                 <div class="tr">
@@ -30,8 +32,16 @@
                         <input type="submit" id="finish_button" value="Login">
                 </form>
                 <button>
-                        <a href="registration">Registration</a>
+                        <a href="registration">Create new account</a>
                 </button>
+
+                <a href="FrontController?command=TEST_COMMAND">
+                        <p style="text-align: center">
+                                <button>
+                                        View Faults
+                                </button>
+                        </p>
+                </a>
         </div>
 </div>
 

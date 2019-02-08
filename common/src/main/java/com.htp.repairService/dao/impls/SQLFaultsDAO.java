@@ -17,17 +17,17 @@ public class SQLFaultsDAO implements FaultsDAO {
     private static final String FIND_BY_ID = "SELECT * FROM faults WHERE fault_id = ?";
     private static final String SELECT_FAULT = "SELECT * FROM faults WHERE fault_id = ? ";
     private static final String DELETE_FAULT = "DELETE FROM faults WHERE fault_id = ? ";
-    private static final String ADD_FAULT = "INSERT INTO faults (fault_id, sectorFault_id, fault_type, date_in, finish_date) VALUES(?, ?, ?, ?, ?) ";
-    private static final String UPDATE_FAULT = "UPDATE faults SET sectorFault_id = ?, fault_type = ?, date_in = ?, finish_date = ?";
+    private static final String ADD_FAULT = "INSERT INTO faults (fault_id, fault_sector, fault_type, date_in, date_done) VALUES(?, ?, ?, ?, ?) ";
+    private static final String UPDATE_FAULT = "UPDATE faults SET fault_sector = ?, fault_type = ?, date_in = ?, date_done = ?";
     private static final String LAST_INSERT_ID = "SELECT last_insert_id() as lastId";
 
     private static final ConnectionPool pool = ConnectionPool.getInstance();
 
     private static final String FAULT_ID = "fault_id";
-    private static final String SECTOR_FAULT_ID = "sector_id";
+    private static final String SECTOR_FAULT_ID = "fault_sector";
     private static final String FAULT_TYPE = "fault_type";
-    private static final String DATE_IN = "fault_in";
-    private static final String FINISH_DATE = "finish_date";
+    private static final String DATE_IN = "date_in";
+    private static final String FINISH_DATE = "date_done";
 
 
     private static final String LAST_ID_ATTRIBUTE = "lastId";
@@ -160,7 +160,7 @@ public class SQLFaultsDAO implements FaultsDAO {
             statement.setInt(2, newFault.getSectorFault_id());
             statement.setString(3, newFault.getFault_type());
             statement.setDate(4, (Date) newFault.getDate_in());
-            statement.setDate(4, (Date) newFault.getFinish_date());
+            statement.setDate(5, (Date) newFault.getFinish_date());
 
             statement.executeUpdate();
 
