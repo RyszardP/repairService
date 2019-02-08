@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Created by user on 17.01.2019.
  */
-/** Basic Service interface with template parameters.
+/* Basic Service interface with template parameters.
         * @param <TO> generic type of objects passed to methods and can be returned
         * @param <VO> generic type of objects which will serve as a view object.
         * Provides create and viewAll operations with {@link TO} and {@link VO} objects.

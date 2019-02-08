@@ -38,6 +38,7 @@ public class FaultsServiceImpl implements FaultService {
     }
 
 
+
     @Override
     public Faults create(Object entity) throws ServiceException {
         return null;
@@ -55,14 +56,16 @@ public class FaultsServiceImpl implements FaultService {
         }
     }
 
-    @Override
-    public Faults loadById(int reservationId) throws ServiceException {
-        return null;
-    }
+
 
     @Override
     public Faults findById(int id) throws ServiceException {
         return null;
+    }
+
+    @Override
+    public boolean delete(Long deleteFaultId) throws ServiceException {
+        return false;
     }
 
 

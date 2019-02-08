@@ -124,18 +124,18 @@ public class SQLFaultsDAO implements FaultsDAO {
     }
 
     /**
-     * Method remove reservation node by id number from database
+     * Method remove fault node by id number from database
      *
-     * @param id unique number of node in database
+     * @param fault_id unique number of node in database
      * @return true if removing from database correctly
      * @throws DaoException if there were errors while removing reservations from database.
      */
     @Override
-    public boolean delete(Integer id) throws DaoException {
+    public boolean delete(Integer fault_id) throws DaoException {
         try (Connection connect = pool.getConnection();
              PreparedStatement statement = connect.prepareStatement(DELETE_FAULT)) {
 
-            statement.setInt(1, id);
+            statement.setInt(1, fault_id);
             statement.executeUpdate();
             return true;
 
